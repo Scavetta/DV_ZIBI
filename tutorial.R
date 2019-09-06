@@ -205,3 +205,16 @@ p +
 
 ggsave("myPlot.pdf", height = 6, width = 6, units = "in")
 ggsave("myPlot.png", height = 6, width = 6, units = "in")
+
+
+# relevel a factor variable
+# i.e. it has to say "levels"
+mtcars$am <- as.factor(mtcars$am)
+mtcars$am
+library(forcats)
+mtcars$am <- fct_recode(mtcars$am, 
+            "automatic" = "0",
+            "manual" = "1")
+
+
+
